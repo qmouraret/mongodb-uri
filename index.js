@@ -26,7 +26,7 @@ const parse = (uri) => {
     if (result[3]) {
       uriObject.hosts = result[3].split(',').map((item) => {
         const [host, port] = item.split(':')
-        return { host, port }
+        return { host, port: parseInt(port) }
       })
     }
 
